@@ -1,14 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
-<h:head>
-    <title>kitchensink</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!--<h:outputStylesheet name="css/screen.css" />-->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:p="http://primefaces.org/ui"
+  template="/WEB-INF/templates/default.xhtml">
+  <!-- <h:head>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
     <link href="//cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.css" type="text/css" rel="stylesheet"/>
     <link href="#{request.contextPath}/resources/css/jasny-bootstrap.min.css" type="text/css" rel="stylesheet"/>
@@ -17,53 +13,77 @@
     <script src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js" language="javascript" type="text/javascript"/>
     <script src="//cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.js" language="javascript" type="text/javascript"/>
     <script src="#{request.contextPath}/resources/js/jasny-bootstrap.min.js" language="javascript" type="text/javascript"/>
-</h:head>
-<f:view transient="true">
-
-<h:body>
-    <div class="container" >
-    <h:form id="reg" styleClass="form-horizontal">
-        <h2>Member Registration</h2>
-        <p>Enforces annotation-based constraints defined on the
-            model class.</p>
-        <!--<h:panelGrid columns="3" columnClasses="titleCell">-->
-        <div class="form-group">
-            <p:outputLabel for="name" value="Name:" />
-            <p:inputText id="name" value="#{newMember.name}" >
+</h:head>-->
+  <ui:define name="content">
+    <h:form id="reg">
+      <div class="row top-buffer">
+        <div class="col-md-9 col-md-offset-3">
+          <h1>Member Edit</h1>
+          <div class="row top-buffer">
+            <div class="col-md-2">
+              <p:outputLabel for="name" value="Name:" />
+            </div>
+            <div class="col-md-4">
+              <p:inputText id="name" value="#{newMember.name}">
                 <p:clientValidator />
-                    </p:inputText>
-            <p:message for="name" errorClass="has-error" />
-        </div>
-        <div class="form-group">
-            <p:outputLabel for="email" value="Email:" />
-            <p:inputText id="email" value="#{newMember.email}" >
+              </p:inputText>
+            </div>
+            <div class="col-md-6">
+
+              <p:message for="name" errorClass="has-error" />
+            </div>
+          </div>
+          <div class="row top-buffer">
+            <div class="col-md-2">
+              <p:outputLabel for="email" value="Email:" />
+            </div>
+            <div class="col-md-4">
+              <p:inputText id="email" value="#{newMember.email}">
                 <p:clientValidator />
-            </p:inputText>
-            <p:message for="email" errorClass="has-error" />
-        </div>
-        <div class="form-group">
-            <p:outputLabel for="phoneNumber" value="Phone #:" />
-            <p:inputText id="phoneNumber"
-                         value="#{newMember.phoneNumber}" >
+              </p:inputText>
+            </div>
+            <div class="col-md-6">
+
+              <p:message for="email" errorClass="has-error" />
+            </div>
+          </div>
+          <div class="row top-buffer">
+            <div class="col-md-2">
+              <p:outputLabel for="phoneNumber" value="Phone #:" />
+            </div>
+            <div class="col-md-4">
+              <p:inputText id="phoneNumber"
+                value="#{newMember.phoneNumber}">
                 <p:clientValidator />
-            </p:inputText>
-            <p:message for="phoneNumber" errorClass="has-error"/>
+              </p:inputText>
+            </div>
+            <div class="col-md-6">
+
+              <p:message for="phoneNumber" errorClass="has-error" />
+            </div>
+          </div>
+
+          <div class="row top-buffer">
+
+            <p:messages styleClass="messages" errorClass="invalid"
+              infoClass="valid" warnClass="warning" globalOnly="true" />
+          </div>
+          <div class="row top-buffer">
+            <div class="col-md-1 col-md-offset-1">
+              <p:commandButton action="#{memberController.save}"
+                value="Save" ajax="false" validateClient="true">
+              </p:commandButton>
+            </div>
+            <div class="col-md-1 col-md-offset-1">
+              <p:commandButton action="pretty:home" value="Cancel"
+                ajax="false" immediate="true">
+              </p:commandButton>
+            </div>
+
+          </div>
         </div>
-        <!--</h:panelGrid>-->
-
-        <div class="form-group">
-
-                <p:commandButton id="register"
-                                 action="#{memberController.save}"
-                                 value="Save" styleClass="register" ajax="false" validateClient="true">
-                </p:commandButton>
-                <p:messages styleClass="messages"
-                            errorClass="invalid" infoClass="valid"
-                            warnClass="warning" globalOnly="true" />
-
-        </div>
+      </div>
     </h:form>
-    </div>
-</h:body>
-</f:view>
-</html>
+
+  </ui:define>
+</ui:composition>

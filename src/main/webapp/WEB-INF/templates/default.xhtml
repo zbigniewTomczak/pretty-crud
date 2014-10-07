@@ -1,75 +1,75 @@
-<!--
-    JBoss, Home of Professional Open Source
-    Copyright 2013, Red Hat, Inc. and/or its affiliates, and individual
-    contributors by the @authors tag. See the copyright.txt in the
-    distribution for a full listing of individual contributors.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    http://www.apache.org/licenses/LICENSE-2.0
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:f="http://java.sun.com/jsf/core">
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-    <title>kitchensink</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <h:outputStylesheet name="css/screen.css" />
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
-    <link href="//cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.css" type="text/css" rel="stylesheet"/>
-    <link href="#{request.contextPath}/resources/css/jasny-bootstrap.min.css" type="text/css" rel="stylesheet"/>
+  <title>Pretty Crud</title>
+  <meta charset="utf-8" />
 
-    <script src="//code.jquery.com/jquery-1.10.2.min.js" language="javascript" type="text/javascript"/>
-    <script src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js" language="javascript" type="text/javascript"/>
-    <script src="//cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.js" language="javascript" type="text/javascript"/>
-    <script src="#{request.contextPath}/resources/js/jasny-bootstrap.min.js" language="javascript" type="text/javascript"/>
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+    type="text/css" rel="stylesheet" />
+  <link
+    href="//cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.css"
+    type="text/css" rel="stylesheet" />
+  <link
+    href="#{request.contextPath}/resources/css/jasny-bootstrap.min.css"
+    type="text/css" rel="stylesheet" />
+
+  <style>
+.top-buffer {
+	margin-top: 10px;
+}
+</style>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </h:head>
 
 <f:view transient="true">
 
 
-<h:body>
+  <h:body>
     <div id="container">
-        <div class="dualbrand">
-            <img src="resources/gfx/dualbrand_logo.png" />
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+          <ui:insert name="content" />
         </div>
-        <div id="content">
-            <ui:insert name="content">
-                    [Template content will be inserted here]
-         </ui:insert>
+      </div>
+      <div class="row top-buffer">
+        <div class="col-md-3 col-md-offset-4">
+          <p>
+            This project's source code is available at <a
+              href="https://github.com/zbigniewTomczak/pretty-crud">Github</a>.<br />
+          </p>
         </div>
-        <div id="aside">
-            <p>Learn more about JBoss Enterprise Application
-                Platform 6.</p>
-            <ul>
-                <li><a href="https://access.redhat.com/knowledge/docs/JBoss_Enterprise_Application_Platform/">Documentation</a></li>
-                <li><a href="http://red.ht/jbeap-6">Product Information</a></li>
-            </ul>
-            <p>Learn more about JBoss WildFly.</p>
-            <ul>
-                <li><a
-                    href="https://github.com/wildfly/quickstart/guide/Introduction">Getting
-                        Started Developing Applications Guide</a></li>
-                <li><a href="http://jboss.org/jbossas">Community
-                        Project Information</a></li>
-            </ul>
-        </div>
-        <div id="footer">
-            <p>
-                This project was generated from a Maven archetype from
-                JBoss.<br />
-            </p>
-        </div>
+      </div>
     </div>
-</h:body>
+
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"
+      language="javascript" type="text/javascript" />
+    <script
+      src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"
+      language="javascript" type="text/javascript" />
+    <script
+      src="//cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.js"
+      language="javascript" type="text/javascript" />
+    <script
+      src="#{request.contextPath}/resources/js/jasny-bootstrap.min.js"
+      language="javascript" type="text/javascript" />
+
+    <ui:insert name="script" />
+
+  </h:body>
 </f:view>
 </html>

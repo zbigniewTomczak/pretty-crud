@@ -3,15 +3,6 @@
                xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
                       http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
 
-    <!-- Begin Example RewriteRules
-
-       // These are custom rewrite-rules, and are probably not necessary for your application.
-
-       <rewrite match="^/old-url/(\w+)/$" substitute="/new_url/$1/" redirect="301" />
-
-    -->
-
-
 
        <url-mapping id="home">
            <pattern value="/index.jsf" />
@@ -22,6 +13,5 @@
            <pattern value="/edit/member/#{id}" />
            <view-id value="/edit/member.jsf" />
        </url-mapping>
-
-
+       
 </pretty-config>
