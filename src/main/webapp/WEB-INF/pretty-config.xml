@@ -5,7 +5,7 @@
 
 
        <url-mapping id="home">
-           <pattern value="/index.jsf" />
+           <pattern value="/" />
            <view-id value="/index.jsf" />
        </url-mapping>
 
