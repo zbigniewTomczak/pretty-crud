@@ -19,8 +19,8 @@
       <div class="row top-buffer">
         <div class="col-md-9 col-md-offset-3">
           <h1>Member Edit</h1>
-          <div class="row top-buffer">
-            <div class="col-md-2">
+          <div class="row top-buffer input-lg">
+            <div class="col-md-3">
               <p:outputLabel for="name" value="Name:" />
             </div>
             <div class="col-md-4">
@@ -28,13 +28,13 @@
                 <p:clientValidator />
               </p:inputText>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
 
               <p:message for="name" errorClass="has-error" />
             </div>
           </div>
-          <div class="row top-buffer">
-            <div class="col-md-2">
+          <div class="row top-buffer input-lg">
+            <div class="col-md-3">
               <p:outputLabel for="email" value="Email:" />
             </div>
             <div class="col-md-4">
@@ -42,13 +42,13 @@
                 <p:clientValidator />
               </p:inputText>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
 
               <p:message for="email" errorClass="has-error" />
             </div>
           </div>
-          <div class="row top-buffer">
-            <div class="col-md-2">
+          <div class="row top-buffer input-lg">
+            <div class="col-md-3">
               <p:outputLabel for="phoneNumber" value="Phone #:" />
             </div>
             <div class="col-md-4">
@@ -57,7 +57,7 @@
                 <p:clientValidator />
               </p:inputText>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
 
               <p:message for="phoneNumber" errorClass="has-error" />
             </div>
@@ -69,7 +69,7 @@
               infoClass="valid" warnClass="warning" globalOnly="true" />
           </div>
           <div class="row top-buffer">
-            <div class="col-md-1 col-md-offset-1">
+            <div class="col-md-1 col-md-offset-3">
               <p:commandButton action="#{memberController.save}"
                 value="Save" ajax="false" validateClient="true">
               </p:commandButton>
